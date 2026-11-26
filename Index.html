@@ -1,0 +1,116 @@
+import math
+import random
+
+print("=" * 45)
+print("       KUIS MATEMATIKA PYTHAGORAS")
+print("=" * 45)
+print("Jawablah 10 soal pilihan ganda berikut!")
+print()
+
+soal = [
+    {
+        "pertanyaan": "1. Segitiga siku-siku memiliki sisi tegak 3 cm "
+                      "dan alas 4 cm. Berapa sisi miringnya?",
+        "pilihan": ["A. 5 cm", "B. 6 cm", "C. 7 cm", "D. 8 cm"],
+        "jawaban": "A"
+    },
+    {
+        "pertanyaan": "2. Jika sisi siku-siku sebuah segitiga adalah "
+                      "5 cm dan 12 cm, maka sisi miringnya adalah?",
+        "pilihan": ["A. 10 cm", "B. 13 cm", "C. 15 cm", "D. 17 cm"],
+        "jawaban": "B"
+    },
+    {
+        "pertanyaan": "3. Sisi miring segitiga adalah 10 cm dan salah "
+                      "satu sisi siku-siku 6 cm. Sisi lainnya adalah?",
+        "pilihan": ["A. 4 cm", "B. 6 cm", "C. 8 cm", "D. 9 cm"],
+        "jawaban": "C"
+    },
+    {
+        "pertanyaan": "4. Segitiga dengan panjang sisi 8 cm, 15 cm, "
+                      "dan 17 cm merupakan?",
+        "pilihan": ["A. Segitiga sama sisi",
+                    "B. Segitiga siku-siku",
+                    "C. Segitiga sama kaki",
+                    "D. Segitiga sembarang"],
+        "jawaban": "B"
+    },
+    {
+        "pertanyaan": "5. Sebuah tangga panjangnya 13 m bersandar "
+                      "pada dinding. Jarak kaki tangga ke dinding 5 m. "
+                      "Berapa tinggi tangga pada dinding?",
+        "pilihan": ["A. 8 m", "B. 10 m", "C. 12 m", "D. 15 m"],
+        "jawaban": "C"
+    },
+    {
+        "pertanyaan": "6. Jika a = 9 cm dan b = 12 cm, "
+                      "maka nilai c pada rumus Pythagoras adalah?",
+        "pilihan": ["A. 13 cm", "B. 14 cm", "C. 15 cm", "D. 16 cm"],
+        "jawaban": "C"
+    },
+    {
+        "pertanyaan": "7. Sisi miring segitiga siku-siku 25 cm. "
+                      "Salah satu sisi siku-siku 7 cm. "
+                      "Panjang sisi lainnya adalah?",
+        "pilihan": ["A. 18 cm", "B. 20 cm", "C. 24 cm", "D. 26 cm"],
+        "jawaban": "C"
+    },
+    {
+        "pertanyaan": "8. Manakah berikut ini yang merupakan tripel Pythagoras?",
+        "pilihan": ["A. 4, 5, 6", "B. 6, 8, 10",
+                    "C. 7, 8, 9", "D. 8, 9, 10"],
+        "jawaban": "B"
+    },
+    {
+        "pertanyaan": "9. Sebuah persegi panjang memiliki panjang 12 cm "
+                      "dan lebar 5 cm. Berapa panjang diagonalnya?",
+        "pilihan": ["A. 11 cm", "B. 12 cm", "C. 13 cm", "D. 14 cm"],
+        "jawaban": "C"
+    },
+    {
+        "pertanyaan": "10. Sebuah segitiga siku-siku memiliki sisi "
+                       "siku-siku 20 cm dan 21 cm. "
+                       "Berapa sisi miringnya?",
+        "pilihan": ["A. 27 cm", "B. 28 cm", "C. 29 cm", "D. 30 cm"],
+        "jawaban": "C"
+    }
+]
+
+skor = 0
+
+for nomor, item in enumerate(soal, start=1):
+    print("-" * 45)
+    print(item["pertanyaan"])
+
+    for pilihan in item["pilihan"]:
+        print(pilihan)
+
+    jawaban_siswa = input("Jawaban Anda (A/B/C/D): ").upper()
+
+    if jawaban_siswa == item["jawaban"]:
+        print("Benar! Hebat!")
+        skor += 10
+    else:
+        print("Kurang tepat.")
+        print("Jawaban benar:", item["jawaban"])
+
+print()
+print("=" * 45)
+print("             HASIL KUIS")
+print("=" * 45)
+
+print("Jumlah soal       :", len(soal))
+print("Jawaban benar     :", skor // 10)
+print("Nilai akhir       :", skor)
+
+if skor >= 90:
+    print("Predikat: Sangat Baik! 🌟")
+elif skor >= 70:
+    print("Predikat: Baik! 👍")
+elif skor >= 50:
+    print("Predikat: Cukup. Tetap semangat belajar!")
+else:
+    print("Predikat: Perlu latihan lebih banyak.")
+
+print("=" * 45)
+print("Terima kasih telah mengikuti kuis!")
